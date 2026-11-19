@@ -8,7 +8,7 @@
 <img src="./cards/activity.svg" width="100%" alt="Contributions in the last 12 months, by month, with streak and busiest day" /><br>
 <a href="https://github.com/subashbuilds"><img src="./cards/build.svg" width="33.333%" alt="BUILD: 14 projects" /></a><a href="https://github.com/subashbuilds"><img src="./cards/brand.svg" width="33.333%" alt="BRAND: 3 followers" /></a><a href="https://subash.is-a.dev/"><img src="./cards/learn.svg" width="33.333%" alt="LEARN: subashbuilds blog" /></a><br>
 <picture><source media="(prefers-color-scheme: dark)" srcset="./cards/title-coding-dark.svg" /><img src="./cards/title-coding-light.svg" width="100%" alt="What I'm building" /></picture><br>
-<a href="https://github.com/subashbuilds/Morphe-Builder"><img src="./cards/repo-Morphe-Builder.svg" width="33.333%" alt="Morphe-Builder" /></a><a href="https://github.com/subashbuilds/MediaInfo"><img src="./cards/repo-MediaInfo.svg" width="33.333%" alt="MediaInfo" /></a><a href="https://github.com/subashbuilds/portfolio"><img src="./cards/repo-portfolio.svg" width="33.333%" alt="portfolio" /></a>
+<a href="https://github.com/subashbuilds/Morphe-Builder"><img src="./cards/repo-Morphe-Builder.svg" width="33.333%" alt="Morphe-Builder" /></a><a href="https://github.com/subashbuilds/Praxis"><img src="./cards/repo-Praxis.svg" width="33.333%" alt="Praxis" /></a><a href="https://github.com/subashbuilds/vlc-android"><img src="./cards/repo-vlc-android.svg" width="33.333%" alt="vlc-android" /></a>
 </div>
 
 <p align="center">

@@ -315,8 +315,8 @@ def activity(data):
 REPO_W, REPO_H = 880 / 3 - 8, 176
 REPOS = [
     ("Morphe-Builder", "Automatically build Morphe/ReVanced patched APKs for any number of apps, from any patches source, on a schedule, using GitHub Actions.", "Python", TECH),
-    ("MediaInfo", "A Telegram Bot which can generate screenshots from video files, trim sample video files, and create mediainfo for Telegram files, Direct download links and Google Drive links.", "Python", STUDIO),
-    ("portfolio", "Personal Portfolio", "HTML", LEARN),
+    ("Praxis", "Intelligence into Action", "Dart", STUDIO),
+    ("vlc-android", "Personal fork of VLC-Android", "Kotlin", LEARN),
 ]
 
 
