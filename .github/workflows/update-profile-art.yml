@@ -1,0 +1,62 @@
+name: Update profile art
+
+# Refreshes the contribution graph + stats card SVGs daily from real data.
+# Runs daily, plus whenever you push to main, plus on-demand.
+
+"on":
+  schedule:
+    - cron: "17 6 * * *"   # ~06:17 UTC every day
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  heatmap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Scrape real contribution data (no auth needed)
+        run: python scripts/fetch_contributions.py
+
+      - name: Render animated contribution graph SVG
+        run: python scripts/generate_streak_svg.py subashbuilds contrib-heatmap.svg
+
+      - name: Render streak / numbers card
+        run: python scripts/render_stats_svg.py
+
+      - name: Check if prepped assets already exist
+        id: check_assets
+        run: |
+          if [ -f pfp-prep.png ] && [ -f pfp-ascii.svg ]; then
+            echo "assets_exist=true" >> $GITHUB_OUTPUT
+          else
+            echo "assets_exist=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Prep the avatar for ASCII
+        if: steps.check_assets.outputs.assets_exist != 'true'
+        run: python scripts/prep_photo.py pfp-source.png pfp-prep.png
+
+      - name: Render ASCII portrait SVG
+        if: steps.check_assets.outputs.assets_exist != 'true'
+        run: python scripts/make_ascii_svg.py pfp-prep.png pfp-ascii.svg
+
+      - name: Render README cards (hero, tiles, activity, repos, blue graph)
+        run: python scripts/render_readme_cards.py
+
+      - name: Commit updated art
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh contribution graph [skip ci]"
+          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg pfp-ascii.svg pfp-prep.png cards/*.svg"
