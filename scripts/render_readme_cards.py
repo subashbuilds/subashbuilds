@@ -184,8 +184,8 @@ def hero():
   {text_lines(48, 338, ["I build bots, tools and open-source projects,", "mostly in Python and TypeScript."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
 </g>
 <g class="f" {d(0.8)}>
-  <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">subashbuilds</text>
-  <text class="nu" x="186" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
+  <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">subash.is-a.dev</text>
+  <text class="nu" x="170" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait)}
@@ -426,6 +426,6 @@ if __name__ == "__main__":
     stars = repo_stars()
     for i, (name, desc, lang, color) in enumerate(REPOS):
         repo_card(i, name, desc, lang, color, stars.get(name) if name != "india-protest-map" else 0)
-    section_title("What I'm", "coding", "dark")
-    section_title("What I'm", "coding", "light")
+    section_title("What I'm", "building", "dark")
+    section_title("What I'm", "building", "light")
     heatmap(data)
