@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   heatmap:
-    runs-on: ubuntu-latest
+    runs-on: instabox-medium
     steps:
       - uses: actions/checkout@v4
 
