@@ -5,7 +5,7 @@ name: Update profile art
 
 "on":
   schedule:
-    - cron: "22 8 * * *"   # ~08:22 UTC every day
+    - cron: "08 02 * * *"   # ~02:08 UTC every day
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   heatmap:
-    runs-on: instabox-medium
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
